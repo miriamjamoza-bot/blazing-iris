@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+*.local
+.DS_Store
+Thumbs.db
+
+android/.gradle/
+android/app/build/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+android/.idea/
+*.iml
+*.apk
+*.aab

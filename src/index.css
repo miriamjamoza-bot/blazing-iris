@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@keyframes flame-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes flame-pulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ff6b00);
+    transform: scale(1);
+  }
+  50% { 
+    filter: drop-shadow(0 0 40px #ffd700) drop-shadow(0 0 80px #ff6b00);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rune-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px #ffd700, 0 0 20px #ff6b00, inset 0 0 10px rgba(255, 215, 0, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 20px #ffd700, 0 0 40px #ff6b00, inset 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff6b00; }
+  50% { text-shadow: 0 0 20px #ffd700, 0 0 40px #ff6b00, 0 0 60px #ff4500; }
+}
+
+.animate-flame-rotate {
+  animation: flame-rotate 8s linear infinite;
+}
+
+.animate-flame-pulse {
+  animation: flame-pulse 2s ease-in-out infinite;
+}
+
+.animate-rune-glow {
+  animation: rune-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  --sar: env(safe-area-inset-right);
+}
+
+html {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100%;
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffd700, #ff6b00);
+  border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+@media (display-mode: standalone) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+input, textarea {
+  font-size: 16px !important;
+}
+
+@supports (padding: max(0px)) {
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}

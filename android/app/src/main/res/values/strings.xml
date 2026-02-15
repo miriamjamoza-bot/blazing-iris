@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">炽瞳·破界者</string>
+    <string name="title_activity_main">炽瞳·破界者</string>
+    <string name="package_name">com.blazingiris.app</string>
+    <string name="custom_url_scheme">com.blazingiris.app</string>
+</resources>
